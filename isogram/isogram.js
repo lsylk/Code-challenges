@@ -11,7 +11,7 @@ Isogram.prototype.isIsogram = function(){
     for (var i = 0; i < this.word.length; i++) {
 
         // Do not add "-" or "space" in the dicctionary.
-        if (/[^- ]+$/.test(this.word[i]) === true){
+        if (/[^- ]+$/.test(this.word[i])){
 
             if (letterCount[this.word[i]] === undefined) {
             letterCount[this.word[i]] = 1;
