@@ -4,7 +4,7 @@ var SpaceAge = function(seconds){
 
 var onPlanetGen = function(orbitalPeriod){
 
-    return function(){ //anonymous function is a closure.
+    return function(){ //anonymous function is a closure. Generates a new function for onEarth(), onMercury()...
         return parseFloat((this.seconds / 31557600 / orbitalPeriod).toFixed(2));
     };
 };
@@ -16,6 +16,7 @@ SpaceAge.prototype.onMercury = onPlanetGen(0.2408467);
     // Mercury: orbital period 0.2408467 Earth years
 
 SpaceAge.prototype.onVenus = onPlanetGen(0.61519726);
+    // Venus: orbital period 0.61519726 Earth years
 
 SpaceAge.prototype.onMars = onPlanetGen(1.8808158);
     // Mars: orbital period 1.8808158 Earth years
@@ -23,14 +24,11 @@ SpaceAge.prototype.onMars = onPlanetGen(1.8808158);
 SpaceAge.prototype.onJupiter = onPlanetGen(11.862615);
     // Jupiter: orbital period 11.862615 Earth years
 
-
 SpaceAge.prototype.onSaturn = onPlanetGen(29.447498);
     // Saturn: orbital period 29.447498 Earth years
 
-
 SpaceAge.prototype.onUranus = onPlanetGen(84.016846);
     // Uranus: orbital period 84.016846 Earth years
-
 
 SpaceAge.prototype.onNeptune = onPlanetGen(164.79132);
     // Neptune: orbital period 164.79132 Earth years
@@ -51,8 +49,6 @@ SpaceAge.prototype.onNeptune = onPlanetGen(164.79132);
 // };
 
 // // And the same can be written for the other plannets compared to onVenus() method. 
-
-
    
 module.exports = SpaceAge;
 
